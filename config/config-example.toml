@@ -36,17 +36,6 @@ shutdown_for_upgrade_timeout = '2 minutes'
 # Maximum time a node will wait for an upgrade to commit.
 upgrade_timeout = '30 seconds'
 
-# The node detects when it should do a controlled shutdown when it is in a detectably bad state
-# in order to avoid potentially catastrophic uncontrolled crashes. Generally, a node should be
-# allowed to shutdown, and if restarted that node will generally recover gracefully and resume
-# normal operation. However, actively validating nodes have subjective state in memory that is
-# lost on shutdown / restart and must be reacquired from other validating nodes on restart.
-# If all validating nodes shutdown in the middle of an era, social consensus is required to restart
-# the network. As a mitigation for that, the following config can be set to true on some validator
-# nodes to cause nodes that are supposed to be validators in the current era to ignore controlled
-# shutdown events and stay up. This allows them to act as sentinels for the consensus data for
-# other restarting nodes. This config is inert on non-validating nodes.
-prevent_validator_shutdown = false
 
 # =================================
 # Configuration options for logging
@@ -187,7 +176,7 @@ bind_address = '0.0.0.0:35000'
 #
 # Multiple addresses can be given and the node will attempt to connect to each, requiring at least
 # one connection.
-known_addresses = ['18.219.25.234:35000','3.138.177.248:35000','3.140.179.157:35000','3.143.158.19:35000','3.139.47.90:35000']
+known_addresses = ['3.14.48.188:35000','3.139.219.212:35000','18.218.51.191:35000','3.20.57.210:35000']
 
 # Minimum number of fully-connected peers to consider network component initialized.
 min_peers_for_initialization = 3
@@ -264,12 +253,12 @@ blocklist_retain_duration = '10 minutes'
 [network.estimator_weights]
 consensus = 0
 block_gossip = 1
-deploy_gossip = 0
+transaction_gossip = 0
 finality_signature_gossip = 1
 address_gossip = 0
 finality_signature_broadcasts = 0
-deploy_requests = 1
-deploy_responses = 0
+transaction_requests = 1
+transaction_responses = 0
 legacy_deploy_requests = 1
 legacy_deploy_responses = 0
 block_requests = 1
@@ -296,69 +285,41 @@ execution_results_responses = 0
 # secret_key = "local_node.pem"
 # ca_certificate = "ca_cert.pem"
 
-# ==================================================
-# Configuration options for the JSON-RPC HTTP server
-# ==================================================
-[rpc_server]
 
-# Flag which enables the JSON-RPC HTTP server.
+# ==================================================
+# Configuration options for the BinaryPort server
+# ==================================================
+[binary_port_server]
+
+# Flag which enables the BinaryPort server.
 enable_server = true
 
-# Listening address for JSON-RPC HTTP server.  If the port is set to 0, a random port will be used.
-#
-# If the specified port cannot be bound to, a random port will be tried instead.  If binding fails,
-# the JSON-RPC HTTP server will not run, but the node will be otherwise unaffected.
-#
-# The actual bound address will be reported via a log line if logging is enabled.
-address = '0.0.0.0:7777'
+# Listening address for BinaryPort server.
+address = '0.0.0.0:7779'
 
-# The global max rate of requests (per second) before they are limited.
-# Request will be delayed to the next 1 second bucket once limited.
-qps_limit = 50
+# Flag that enables the `AllValues` get request. Disabled by default, because it can potentially be abused to retrieve huge amounts of data and clog the node.
+allow_request_get_all_values = false
 
-# Maximum number of bytes to accept in a single request body.
-max_body_bytes = 2_621_440
+# Flag that enables the `Trie` get request. Disabled by default, because it can potentially be abused to retrieve huge amounts of data and clog the node.
+allow_request_get_trie = false
 
-# Specifies which origin will be reported as allowed by RPC server.
-#
-# If left empty, CORS will be disabled.
-# If set to '*', any origin is allowed.
-# Otherwise, only a specified origin is allowed. The given string must conform to the [origin scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin).
-cors_origin = ''
+# Flag that enables the `TrySpeculativeExec` request. Disabled by default.
+allow_request_speculative_exec = false
 
+# Maximum size of a request in bytes.
+max_request_size_bytes = 4_194_304
 
-# ========================================================================
-# Configuration options for the speculative execution JSON-RPC HTTP server
-# ========================================================================
-[speculative_exec_server]
+# Maximum size of a response in bytes.
+max_response_size_bytes = 4_194_304
 
-# Flag which enables the speculative execution JSON-RPC HTTP server.
-enable_server = false
+# Maximum number of in-flight requests per client.
+client_request_limit = 3
 
-# Listening address for speculative execution JSON-RPC HTTP server.  If the port
-# is set to 0, a random port will be used.
-#
-# If the specified port cannot be bound to, a random port will be tried instead.
-# If binding fails, the speculative execution JSON-RPC HTTP server will not run,
-# but the node will be otherwise unaffected.
-#
-# The actual bound address will be reported via a log line if logging is enabled.
-address = '0.0.0.0:7778'
+# Number of requests that can be buffered per client.
+client_request_buffer_size = 16
 
-# The global max rate of requests (per second) before they are limited.
-# Request will be delayed to the next 1 second bucket once limited.
-qps_limit = 1
-
-# Maximum number of bytes to accept in a single request body.
-max_body_bytes = 2_621_440
-
-# Specifies which origin will be reported as allowed by speculative execution server.
-#
-# If left empty, CORS will be disabled.
-# If set to '*', any origin is allowed.
-# Otherwise, only a specified origin is allowed. The given string must conform to the [origin scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin).
-cors_origin = ''
-
+# Maximum number of connections to the server.
+max_connections = 16
 
 # ==============================================
 # Configuration options for the REST HTTP server
@@ -589,27 +550,27 @@ max_global_state_size = 2_089_072_132_096
 #enable_manual_sync = true
 
 
-# =============================================
-# Configuration options for the deploy acceptor
-# =============================================
-[deploy_acceptor]
+# ==================================================
+# Configuration options for the transaction acceptor
+# ==================================================
+[transaction_acceptor]
 
-# The leeway allowed when considering whether a deploy is future-dated or not.
+# The leeway allowed when considering whether a transaction is future-dated or not.
 #
-# To accommodate minor clock drift, deploys whose timestamps are within `timestamp_leeway` in the
+# To accommodate minor clock drift, transactions whose timestamps are within `timestamp_leeway` in the
 # future are still acceptable.
 #
 # The maximum value to which `timestamp_leeway` can be set is defined by the chainspec setting
-# `deploys.max_timestamp_leeway`.
+# `transaction.max_timestamp_leeway`.
 timestamp_leeway = '2 seconds'
 
 
 # ===========================================
-# Configuration options for the deploy buffer
+# Configuration options for the transaction buffer
 # ===========================================
-[deploy_buffer]
+[transaction_buffer]
 
-# The interval of checking for expired deploys.
+# The interval of checking for expired transactions.
 expiry_check_interval = '1 minute'
 
 
@@ -619,7 +580,7 @@ expiry_check_interval = '1 minute'
 [diagnostics_port]
 
 # If set, the diagnostics port will be available on a UNIX socket.
-enabled = false
+enabled = true
 
 # Filename for the UNIX domain socket the diagnostics port listens on.
 socket_path = "debug.socket"

@@ -1,0 +1,35 @@
+[[accounts]]
+public_key = "01054c929d687267a30341c759b4a9cab1238cb2de65546be43dad479c50745724"
+balance = "9999500000000000000"
+
+[[accounts]]
+public_key = "0126d4637eb0c0769274f03a696df1112383fa621c9f73f57af4c5c0fbadafa8cf"
+balance = "0"
+
+[accounts.validator]
+bonded_amount = "100000000000000"
+delegation_rate = 10
+
+[[accounts]]
+public_key = "01032146b0b9de01e26aaec7b0d1769920de94681dbd432c3530bfe591752ded6c"
+balance = "0"
+
+[accounts.validator]
+bonded_amount = "100000000000000"
+delegation_rate = 10
+
+[[accounts]]
+public_key = "0140afe8f752e5ff100e0189c080bc207e8805b3e5e82f792ec608de2f11f39f6c"
+balance = "0"
+
+[accounts.validator]
+bonded_amount = "100000000000000"
+delegation_rate = 10
+
+[[accounts]]
+public_key = "017536433a73f7562526f3e9fcb8d720428ae2d28788a9909f3c6f637a9d848a4b"
+balance = "0"
+
+[accounts.validator]
+bonded_amount = "100000000000000"
+delegation_rate = 10

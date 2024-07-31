@@ -1,0 +1,832 @@
+# Start of contract portion
+# Keys are contract package hash of contracts used for exploit
+# Expected behavior is clearing out of named keys under all contact versions held
+#
+# Value AAAAAAAJ is base64 encoding of 9, representing a Unit type in the system
+# This is a flag to indicate that this is a special case and further actions
+# are needed rather than simply writing this value to the key location.
+#
+# These can be queried with the following:
+# state root hash is needed and is selected from what height you wish to query.
+#
+# Retrieve the contract package
+# $ casper-client query-global-state --key [key from an entry below] --state-root-hash [state root hash]
+#
+# This will return data with versions under the ContractPackage in the form of contract-[contract_hash]
+# This value we be used as a key, however the leading `contract-` is replaced with `hash-`
+# $ casper-client query-global-state --key [contract-hash] --state-root-hash [state root hash]
+
+[[entries]]
+key = "hash-14d5918846efb331574245a1f91af1ee348c2bf62ea9be697be5efbe4b5f760b"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-2100b78d7493f0afae0d72461555572cd0047ec2a485a3f450e46ee182695151"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-2bb3a60ca39bc0433bb598f7e8275f3c21e36112a660de253e58df3d988ffd52"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-5826ff77201fd1a5eaf7c88d2c9e7aa268b8c7537e3295a9d14d13dadbd1a539"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-64bde70872d0e6aed99319003caaff9780ccd0f1eb506899f36c38f2a7422859"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-67ae74b0613d0884a95e90b34f3486a7ee6c37d5ce0e866952880f49db1051c7"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-7edfa068c2eee054b6e7cde968f9509841ec6355802648779e7d043e39341800"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-973010aa11af8d6e19fd2c6feb08d46b8f8e303eaedd6b1bfb385d180a8424a9"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-a065218793d282f2c143865a3fd7decab0f318aeef46fbbedc9cf96260a3d7fd"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-a762ff2df223a3f73320a7c76ae0e504ad414ba7f606b204ed20c049fa963702"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-b5b3f4df8ce5fa67b4a334f179363e10100d78c0d5615df73383db161074d01c"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-cda2f03cff36d164b337e5184aba113d1e74aeb4764fa9c04e53c1bed5af975e"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-d1cf7ed725458dff053a15e980c91fbcb8cc4a8978e6c353f67b6bd230ec3aa6"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-da0adb8312eb1f96783a9aa78b0d47998a2d6ce6386e461d7539bb00d1f065dc"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-ef60d0e330149e4709f7616f19bca878021e4be7626c6d28ad371c05c3f1eecf"
+value = "AAAAAAAJ"
+
+[[entries]]
+key = "hash-f1fb1e2b66733ebed8b1e9fa647ab2b1715087079a96fd1c29c68cb47354c645"
+value = "AAAAAAAJ"
+
+# Start of balance adjustment section
+# These are direct writes to the purse uref in the key.
+#
+# Values are base64 encoded serialized U512 types.
+#
+# These can be queried with the following:
+# state root hash is needed and is selected from what height you wish to query.
+#
+# $ casper-client query-global-state --key [key from below]  --state-root-hash [state root hash] 
+
+[[entries]]
+key = "balance-01134da83d4ad2490a96c1fde8afbfc902ac0a0c72b60f86c4dbb8af96fac3af"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-01263f54cc6a18c4e611d4aac3479d7e443401129de6d0129440843db28326d2"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-0288f99e039f92f199b38e3188fd0d88abacd0dcb789dc5bb9a77b49913ba0e8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-028ce190c04e6accc2f1b44c51db77d1e23b520bb9ba8ef7acad35431c4db879"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-0440a68b0b1d3bf0e01f5a83e50d856ffe1da521bb349a4f7f454199ccb5c24d"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-05d6cd768483503ae1def670845a7baf88afd6cf716ae526b3d9afab12e144b7"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-0601c4470da548b6e2f7c476b207a19b2387d254017d778d8278d5e15ead8d22"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-086015239df283bcf9539b4bf7fae72684541304340260a35b3aa809c71ec7be"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-0a46aa852864af71120bf5c7977f1c70b8724454ee28d38bafe2b5196369b580"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-0bae0cef5b1bf76ec74b0d418c4ae765ddc8d816962f7855fc69376643758f49"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-0d39656f34715126d52f4f163f0f49db4a6f60f8a5a8a9a2dcbd4d31d98bdebe"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-102125898be0ef10e92871a4253cfc82257125ee0d3c9d24112c8f5a909b2a6d"
+value = "AAYAAAAFLkUT/LkI"
+
+[[entries]]
+key = "balance-10292481f246a702fa71a41884e1d2426348dd6d09df76e27c22a4579b87a8fa"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-114694e04962c2ffa15547e14be8da0593e3ffbb2772520f1ec1a76510235bb2"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-1231c9ff8c203f1a037214d460d737f9b6ddb8d90f414df9f6d32155606a9401"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-1276ccaa0c023903ff358d8f249e8b599c6b054ec41096438bb41ece03ce77ee"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-13f51a09733421e7240dfac1a6195a3f7e9f71fd8a1ac3e0b61514b31da8e5a8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-15999efeff1e01ec03775fde332031513299d7fe71624af96e02519c9b19aef4"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-16a709131b3c29a80e57dd64f0e97c66b51ec88047f90f556ee4d1b1bcf27f0a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-1752cb0cc599f259177b2733f056d34814fd0394f63e6a3700c4e33f3afd7a85"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-18928486de39b93fcf2261c54a695812a19d4714ba8c0fc32eb998288f44d94e"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-1922c6f2f2d45c40ecb2bb87e7409607019c21b6669e49045fb23ed50a16d9c8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-19d5734df0bba8550aa7e1d6bcb1ac525967286f848aba589233c722d196d9b9"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-20ff4d2b2883141a87e9fe7b535d8e1b43d199cb929a194ab22172be94bef17e"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-268611f19990091036d1b0eab70e5770102815f6586bf34a4ad3592caef0e2ea"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-275bab4c86f7a7b057ab0010679b4e16e1e7ad13f4bc5420b8e137bba131776d"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-2a90511995c2784e7efb1341b718ad130e060614520557fddea8ee8d6f05ffd9"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-2ad1bd815504038239d7bdf311b8988daa8950ebb676cf8560b21061871db701"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-2b6327116ea0c7aec99d2c6b782b41f7341c1573cb7599f6d6bbfb16dfbd2f05"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-2d2ea4b62b620e56e7dc4f4733afc26cf6e3a6647a6edb4084b1ec70b3e306e3"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-2d79d7fa0666fddf60507aec4d15e861837a903ff4b15ef62f73561b348180e2"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-30839320e30dc7f8e779b4cc67fa9ce574470d193634511642a2f6176a045d99"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-321e3a0245c01bdf839c42966ce3e417730ab2d5ef0b887fb3e2cb150a285eab"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-3541e279f8bdd19493c2677d5076f4790ee7b919c9486052ff79131b1e500b85"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-3543e6ff57b8f4cb91efdcd4de3e7a01989e8d53c51a8bd191b1824e177c58d8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-36f52e89b29032e78f5f5e6e1804e35af9567f6b0089e283b6a71a80d5a178f5"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-387e881ec48dc0b2f31fa5c475b1bb7028a3315a18ba93c5c63f8cea5d9780bb"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-3970924107e7b05f089ed2af7f37e486106896af9f48fd3726f32eef89b32311"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-3b6a918f27e10fd134162c6d18a36439437c89c105cf6b2cce43646d1de35e0e"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-3d83c3c9dfbc6814d5bd61822986f66195a675ffc44f1abe8c4ed58e7e0cb1c7"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-3e2730d1a72ffba86a400563524230e7538ea3eee4880ca64af9254bb686121a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-3eba13f50276032a730d10dac0b7a20bd78cbcfa90122407110d99f9b289295c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-41f849cc1e1f3be5645c99d042731e66831caf12f2103d2c0dd7f25d79f8bbc5"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-426547e8353089d2be6a7e45cada743e526dddd2c9ca06e0d96e679290844b4f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-4273a84e283b9866a9a1b014d4aa4f7f44aa1409c39d1cd71e6de15e67c10f3f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-4331664d1f8dbc6ec926a577de4b3bcf8d532feb0411f45e5825cd1457a09632"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-4383bfec9de8a965a4374912e3876753973bbb48f9033ddc06141177aba3ad9c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-44d722b1b73f06692f36cac96c958056023aefcb90c205a89756c1fa20f2775a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-44fb874115a10ed3cc3aa07ac4516515fdceae48608aaf0c112448f040535a7b"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-45ea2f8e7359cadbd49090d944f05885d3e22d0ee77e2f11e7748bbb6520e4e5"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-462632e68af2b162c699d404fa1e4736917693729cdc1082a94295f0196a2432"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-46f8f77177fb5541ffb514a9eec68e46081f04f90e6cc6c03a47a8bb310d8fb2"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-47771ed26bab6b5d4643fbc7a357dd7a14941cd95bd405dda940aeaf578a1493"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-4833d61de9cd4c630c6bab6bc054623a68ffafcf40f8dbac78c2f534ab804cfe"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-487368a9acdff8a67578fa891b53128fbaf11fa804f4d7e0957b0fd46fee5f09"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-4886fd42375441929800cb1ec9cc1b7df419eaa740c7b7b6a726f812e9e14079"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-49fefa7c77eac3bc8423890b6949312de3dc1fb9d9088f140fa8d438de192f0a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-4aa1f86539539739a61110799b596a6697a139b4180c711b11950c0eee3ea45c"
+value = "AAkAAAAIIBhbnqorPAII"
+
+[[entries]]
+key = "balance-4ed5fca1d08723f2e292bc067460f3de2653a338d8093821d02a057fef3a0f45"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-527e1d2fc5fbc9e8bd50f6b8f7bbb3a999dd286b848e2c70070f1db31d3fbfab"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-54d4dcacf96f90d1ed51f38030421983012fa6d221d2320cd26c02609f2d6a62"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-56a7020bb728e6e0dab05de18268006b000ef8458a2d1a6a4701fccb43db13f3"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-59ff05d2dad4fbd1bd6dda78f9bb95ec56aefd388283b3c69f8b204316040eda"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-5a17dcf22fd511fc77efaa9552a8c255e5f0b1cc74b9a2cac94a8f79c027c9d2"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-5afb104a2c1105db66d6ca6b8febb51537bdde8c18f9d1125a5d1454d9bff6a2"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-5b98dbd27c5e941d6f851f51401a1dde7df96c5777c0f942229dc04c226a6c8c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-5b9b4e025dae83893852d86fca235f1ddf9e0e5b8f2f42a206ca6a790c01767d"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-5d4928648b3322bb3dd05b307bb39963a957639fd7d184b545e8cde9cdbf5bc1"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-5fd06dd04101b4be1ab51638a76e039a5d3cb39acb9030bc2795d4e66e98b1d1"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-6058a2141bd0f488102a04e5f7f63aa05e60be98e8fe2fa1fc5ba44007919c35"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-60d031d14295b31459166a66625772a6d6892973cf54b8dfd8e4f9efb018028c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-613b8effae5051b3b0aa0897a0ad6aa3eee38eb99c5816d17e58a70b65038565"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-61c102dd2ebc53485006dc721e4247418609c8c682184867558e7a3d183a3c71"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-650a6b82a9848a82b96ae6161f1461151a6daabf7a45b6d9574e7b7527b1b4ef"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-67cad3b1074e5a038ab6d3b34fae86f315a48c4373db72fa91b906f897c86ce3"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-68f3953de0292be86a811becf47a410ceb963c79181bec4feb0db7fe8767b894"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-6afb70d27821dc4f58f78de70e81cf34625c02e2b17e254613908a9d5712cd7a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-6b501f837596bc317ef1cf79244588c6333705eedb7430a4e3aa30973f63dd64"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-706de3080f141c55ab53de6ee769925d6d556ea8fe200274a70e7e313312408f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-707547ea862b4d780a49e4aaa45f209ef74479c7d420aff54f168c58cc174cb8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-71c44963971f05b9a4b03504aa890fa01a1a8b1f53efd8d33314c8dfc37c34a2"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-7233beb5ffdea04a93d8e775903623326f27ae4e1c088d607eba48afd8a0c911"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-724d3384eb0835e255ef12eb9b4634c07b73d5ceab9704c28e47b9583da71f8f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-7581a0d36e57094305109f7bd667841cd17bf92be1379d1ba35a5e9f61c9a3af"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-7961f43e3774a2541fee5a8a233805da575caf1411bab107fe2d11d22823f72f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-79df1e73ee14fb64665be29f9a08836a4e3ab6c714a611093b69cb1f20bb0cdb"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-7eb9927245755dec6b6bef3cc7446ac6d548b9d21e13adccc935e0f5f52c5ee2"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-7fb81b5b4109dcf48bb469fa0674947e42b49440b41ac07f8ea49272f671a808"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-8343794ed6b08c3452cd2731ea26b958a367e8dbe4552418388ac27b4f337048"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-883eaec1d03bd9d9c426f3d704ea782a3da0f2ef80a2663ce2fc03876f18ed15"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-8a16be6861c4aafd266544f52aaf8e3cfd065ed50387b917f603203e9747411a"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-8bcf73030b3c4a544bbd7a586150a07082d8c8f9512be3f5dc6ce63298f7b3ec"
+value = "AAcAAAAGwchlSgABCA=="
+
+[[entries]]
+key = "balance-8bf139b6ff6a1909f5f48f808a89950252d926334ac0de70c64ccc6580799055"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-8c8ff18677b71e43f51acf984fb244c5ddff4920ac313096a2455870c848d1cf"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-8dbf9e187c1775d9678687944bfd0b36ed147ab6601b7aa3810af9cfcd76837e"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-926249dc64c755d82f1274d09b0a205236b575751adeab619614793f8d0f1803"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-93ffe7146d0939c2eb9eb2b3aa5f4d6ff223e55d53048d81e36b9e68686479ed"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-9435116e1291b2f43eb38e607da4e386ee5c137a1c885e8e04e4afff73613a77"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-9579f81a42d0e61137eef5c5b0e574e87a174a423cc391538ba744ea95070b66"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-9b3d19c0c5879cb4146bbcd7742a04613b86a959798e6ab605bfc9142445acb9"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-9c8741f589fba2a188f164b39a5eb53ea256e83ca86691b07342af2d5e20cac7"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-9fc032c51b5dd0574f827ba8ac021a00347bcd695e2de8801200ca1c4d788d76"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-a008b3ece6d553d6a1bf7197ed7f7dd88123f1288e0132de334670a4df1df3ac"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-a14c94a311b246e46b798dca07d0b8db47da574646ecc8404b6303a4eaa1b501"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-a43fc92f271edde66c9d78d5f36756390815199f89279e5c0d5ae48a7067c138"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-a5800158345304fb5392ca4b5d7eb541de0d411709b3531846f3765703ad713f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-a5fb75d4b21020e33937c0fc4167dd6012e0158c8785ddacd9369dcef85fabfe"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-a7ec8429cebaccb470564048619b47a18df9b3e67b60a067a663d016ed5dbb71"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-a95b1f474747b18a6a3a7abd028bff0ecf595090866c5188343224fe0f5b532a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-a99ecd49bd74c5528bf1902bf4956cc1aa452038d8396bb09e18e64cece8c5ca"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ab1f7e35ade08d9fe4bed91446e95290c6329140e0e6214c4d675cc0a421779b"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ab24d5a674d3ec82b968acf8a418c18c168dd74b0ed6b770f870193246ecb364"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ab3f56595e19f966d9ea139b9ac644b5cf79402c97f5f08b51068c84c5bbc801"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-af6742ad6ca0a1b459d31c594c039c0e3cb061dda6d52d6bd83fb20a800a0bf4"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-afb835399046146dc1c6b265da3b87fbb19a65a63af72efeaeba786b38cef001"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-afe8fe7c8bdf4f290a77b9e6fbbde664e2537cb6d5614d3ae70dc530d5055efe"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-b04675f358606d0c8791e8792fe3f7897ee92b2983830c263b3b4362e5ee469c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b086a89f786469b023f23fc52d7c70d79abde894d9c054183bfb80ce25110788"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b1148d3957b5357b12016980be9f8b7493f1b8cc9817e0510fe23e893d2add97"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b1aa540aedff9dab8b8d14d4f9e404015d7a6d27b9c9a77c30dd137dd2bd52d5"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b1d73e41052d3def9bba04e31da7829f803ca487b8e1dde36ab140391c1045f7"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b61baad2198cc08d2dda8db5157c8a2a9654e9f3a93ef4e186f744d0510efa6a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b6dcc21f608ce49f91e2cf295a54aec3d56bd278027800a28c9fa78c5f7f152c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b7252d8feedc0de0863b72ad59087fff57fe917aceb2b392930247eace175cec"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b810285bd690f83d66ec4f466f55aa5e40905b41bb1e75b53a8b112b3ceffdde"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b8a54bc0fbbf8d0e341e3d562b1379b262810aa95c5da3e970551917571f94e9"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-b98721da66d78b420a6eb0ef6918a329e29d6f09641f2f50ded476003efdbbc5"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-bbdb06bba7d2e34dd8b8a9b622aa8de4cd8bc4bbef5a97d3a7d147333987ac4d"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-bc4dac777511eb3fe975bdd3ac3143a3014d17a66b70ab60770ee8d02c41d47a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-bd23bf5bfcb5ee03d5a889bd575dd77e35dbc583e90b130808e85310e3e32b0f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-bd50a3cf773f75db228e0e47fc3f30a8af12c1207dab9d664bb289757514dabe"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-c15853652557f576a768777458d1f9e60eb04c801486f278b795c7d6605842ca"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-c3ae859108523ba53e21289ead0bc3db80ebd8f7ae9ad09fb0f046a6c23d9b5b"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-c3fce7612a0b146b9adf5b87e912f4456fa6643d3e5dac43d43eadae7df288e4"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-c61a847946d6c77fd019065c90fb767b3bebb753337b3edbbb217fb8b51552b0"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-c96bb86674049b53f40b45a3ee828c7a5b52b42a3d2ef6b102670c15d6fb3153"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-cb98847f00d1397fb06cbc2a3fa3ae15bbcc156dd283b14c9d976046119a24a8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-cc1d180d46aca83e64ef5ecf3d497958bf9cfe3b17b1024d9b33d004dc78c06d"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ccc70c2ed2eb25494c0fd962815b548116a8df67134f7bb9453d9c41294b6e99"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ce233f33f8e08bb157b8afd38a8f0a515a5e62506607b3484e23c4180a5227b1"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ce72f7e27dc7967f7b10f722af2665b99c0b46e4b5f3e13c23ba9d1fb63de695"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ced4ee893424b3e6c27890f2344d30123a32422115381de10b103159bc5d5fdf"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-cfd043024bb356c78b4afa3f89ca39559856cca2936266ded49f218f319e0b75"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-cff0cd296bcc1a5f88a49f08ba23829c9f53473f93a61f0e5771f467dca1360f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-cff4acdd516ae4a1ac8452a8f1d8b8cf0b2b4f9a6c95a9b505571d24f51f3494"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-d205a5b4643ea69aec62cdf6e44a3de4a3f81c717473ff3be74ce28ae7136bee"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-d34432d253e75566931848d5823efa0125793b350f5eb236daac291631c01144"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-d5386341f4980d059f16e43f0c32a18675cb57bd14878b810f9ded1d70d3b0c8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-d8a71ed3bb5f80796b35a1a46cafcfe6d3a8cc4daddb43e5bc101f9f02d50311"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-da5c72051f81067ac2d95667577393c6f6e653fe1c747938a25eefb229e91fc8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-da5e2bf3558d805cffe435f3d131a60724bcd86f311e3fa23d1ebe953f192128"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-db99cb21062349edcbf05362a9875e5a481f0cf29f5f766c467ae609d1d5752e"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-de965a7632d502aece3619d82d4429d85b0bb31b5d08c0b1341672a5da1d00c9"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-df621492f01cad3b1af4aa175114cc71804b2fa29ada8bfc6b4427c7693bfb3d"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-dfc91535552ce6def46ff4e64afd88481a69ac310e87308d0dae44c76b223f16"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e174d04c63700b46c35787abf4edf0455e46017abba80e6dedc143ef89e86824"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e185238b2c7a269955b1c39208c0215db9806c35e54869f4293020aff1b2db1c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e3ee72e8f555f4f4c72032a7e74c54068b4fc7b90e98279910559c5d9f440823"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e503d21281a457a3881397cdbb6486deab7dcc708fd5842fc81645023afc4b01"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e5f333288153c41e4641c23a435c93cd2e7f8a81c91070ace91f949f92ee3c6c"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e6e616e72f45c566babf3694b103693e5edcee4ff8828e4bb00231a529a8270b"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e7fc437382cb4ee0216629343a81eae9929b4e26ba9fd5b036715fb50286ac8e"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e8156c9b8a8cf3356a635f894edf43880ce78f71befb26780f92c9ed81e57246"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-e89b93d2d9572d65f33b488fba6ac94b6b9ecb742e6b4069f844539e83db6410"
+value = "AAYAAAAFVy51qwUI"
+
+[[entries]]
+key = "balance-eb0a2e571c7aed42bb99287cc5d12be57a1d659d9b065eaddfe7cc99d826a84b"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ebc7402606be213371bf36f2428c2a11a2b6056cccfc7d08a6e17569ba6dd33a"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ecd943f5382cb78776bad2f172c34d117bfcf9399178992b87644a24340c7365"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-eebd7434ebc34278b8ce67b626832830178e8d57156cc306f6ad3d9f7a2c05fa"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-eecfe4eda283afce57f690de608baffe559b63a8e2c981ee2c03ae6ce9d0bb51"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-ef387149d7a23a3522a682dc48631266dfb20466a854331c741e329a1efc08bd"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-efd5d4e50de41a0b18d4c94d18986b8b72fab638add20b204d801ffae3093b89"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-f18911534230692015c9702af168f125bc3ccb1245b4be47a29860590d06b425"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-f2f7d06bf625a78583e380f0b77fdf217869feb3d3360f739ae2cff3679fd900"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-f36a413c8bf4464f77efbc8bd1ab81ef2af9c429203d72a5c14ed601daeafc54"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-f42e61b4e57d0703fee37be29fcd4443b6e832ce42964c5a8f0e13f9962f1397"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-f66b4d2be6e18de1ad85d4a278d7a45d7e99896bef2ceedbd0123f2ac2bddef9"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-f7a7ca88833a9e61e6dfb3d9a395dae9ee201bfd596111e43bcf0fee0f115958"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-f7ef4ec5b89e42aedbc6c4957bd272be9fe8190e5ea45f247b30e54e4d5431ec"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-fa0c635010201d2076c912e1e8a3dc0dfa0bc4d7d7509b5d00e5bfa271a465cc"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-fbeb8f82228e6632e936f6047712b99097b7b5de723f519f9e580b4c5fc5996f"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-fbed369b8b200f8e09786f04083074ad9df3fd0902779c7d94c2bbacee0f06f7"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-fc3d3d1da8c579429b11c8579ea9efd7c7fd699642496cd2fdcd2133905c85d8"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-fc6e3ce91e4be43fb085d144aac392b082efc57573a4ac811a411b68be89bbc5"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-fd6412c654286524392b2ab699bc343d47294060b7be2418e7c1aa4466c08e4d"
+value = "AAEAAAAACA=="
+
+[[entries]]
+key = "balance-fe1eccf93ab1b9f7461c663b75de1aa01491704b8b3fbd7a263517185388dbdd"
+value = "AAEAAAAACA=="
+

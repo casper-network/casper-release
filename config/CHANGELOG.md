@@ -11,6 +11,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 [comment]: <> (Fixed:      any bug fixes)
 [comment]: <> (Security:   in case of vulnerabilities)
 
+## 1.5.7 - 14544
+### casper-node 1.5.7
+
+## Changed
+* chainspec.toml
+  * protocol
+    * version
+    * activation_point
+
+## Added
+* global_state.toml
+  * Contains corrections for global state, details in file
+
 ## 1.5.6 - 12509 (from 1.5.3)
 ### casper-node 1.5.6 9f3995853204a18f17de9c022233d22aa14b9c37
 
